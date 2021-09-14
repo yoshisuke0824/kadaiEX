@@ -1,7 +1,11 @@
 require 'dxruby'
 
-font = Font.new(32) # 追加
+player_img = Image.load("image/player.png")
+x = 100
+y = 100 # 追加
 
 Window.loop do
-    Window.draw_font(100, 100, "テスト", font) # 追加
+  x = x + Input.x # 追加
+  y = y + Input.y # 追加
+  Window.draw(x, y, player_img) # 書き換え
 end
